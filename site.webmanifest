@@ -1,6 +1,6 @@
 {
-	"name": "アイコンジェネレーター | Frontend Conference Nagoya 2026",
-	"short_name": "FEC Nagoya Icon",
+	"name": "アイコンジェネレーター | Frontend Conference",
+	"short_name": "FEC Icon",
 	"icons": [
 		{
 			"src": "./assets/favicon-16x16.png",

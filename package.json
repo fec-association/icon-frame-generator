@@ -3,8 +3,9 @@
 	"version": "1.0.0",
 	"private": true,
 	"scripts": {
-		"dev": "tailwindcss -i ./src/input.css -o ./style.css --watch & bun run server.js",
-		"build": "tailwindcss -i ./src/input.css -o ./style.css --minify",
+		"dev": "bun run generate && tailwindcss -i ./src/input.css -o ./style.css --watch & bun run server.js",
+		"generate": "bun scripts/generate-pages.js",
+		"build": "bun run generate && tailwindcss -i ./src/input.css -o ./style.css --minify",
 		"check": "biome check --fix .",
 		"prepare": "lefthook install"
 	},
