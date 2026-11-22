@@ -2,8 +2,11 @@ pre-commit:
   parallel: true
   jobs:
     - name: tailwind build
-      run: bun run build && git add style.css
-      glob: "*.{html,css}"
+      run: bun run build && git add style.css index.html "*/*/index.html"
+      glob:
+        - "*.{html,css}"
+        - "src/events.json"
+        - "scripts/*.js"
     - name: biome check
       run: bunx --bun biome check --fix {staged_files}
       glob: "*.{js,ts,jsx,tsx,json,jsonc,css,html}"

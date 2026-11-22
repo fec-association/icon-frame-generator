@@ -1,8 +1,8 @@
-const FRAME_SRC = "assets/frame.png";
 const DEFAULT_SIZE = 400;
 
 const canvas = document.getElementById("preview");
 const ctx = canvas.getContext("2d");
+const FRAME_SRC = canvas.dataset.frameSrc;
 const fileInput = document.getElementById("file-input");
 const dropArea = document.getElementById("drop-area");
 const controls = document.getElementById("controls");

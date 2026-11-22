@@ -3,13 +3,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>アイコンジェネレーター | Frontend Conference Nagoya 2026</title>
+		<title>アイコンジェネレーター | Frontend Conference</title>
 		<meta
 			name="description"
-			content="フロントエンドカンファレンス名古屋 2026の公式アイコンジェネレーター。画像をアップロードして位置とサイズを調整し、SNSアイコン用の枠付き画像を作成できる。"
+			content="フロントエンドカンファレンスの公式アイコンジェネレーター。イベントを選んで、SNSアイコン用の枠付き画像を作成できる。"
 		>
 		<meta name="robots" content="index, follow">
-		<!-- Google tag (gtag.js) -->
 		<script
 			async
 			src="https://www.googletagmanager.com/gtag/js?id=G-PF8CPFDBSN"
@@ -27,34 +26,22 @@
 		<meta name="theme-color" content="#0a0a0a">
 		<meta
 			property="og:title"
-			content="アイコンジェネレーター | Frontend Conference Nagoya 2026"
+			content="アイコンジェネレーター | Frontend Conference"
 		>
 		<meta
 			property="og:description"
-			content="フロントエンドカンファレンス名古屋 2026の公式アイコンジェネレーター。SNSアイコンに枠をつけよう！"
+			content="フロントエンドカンファレンスの公式アイコンジェネレーター。SNSアイコンに枠をつけよう！"
 		>
 		<meta property="og:type" content="website">
-		<meta property="og:site_name" content="Frontend Conference Nagoya 2026">
+		<meta property="og:site_name" content="Frontend Conference">
 		<meta property="og:locale" content="ja_JP">
 		<meta
-			property="og:image"
-			content="https://fec-nagoya-org.github.io/icon-gen/assets/ogp.png"
-		>
-		<meta property="og:image:width" content="1672">
-		<meta property="og:image:height" content="941">
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:site" content="@fec_nagoya">
-		<meta
 			name="twitter:title"
-			content="アイコンジェネレーター | Frontend Conference Nagoya 2026"
+			content="アイコンジェネレーター | Frontend Conference"
 		>
 		<meta
 			name="twitter:description"
-			content="フロントエンドカンファレンス名古屋 2026の公式アイコンジェネレーター。SNSアイコンに枠をつけよう！"
-		>
-		<meta
-			name="twitter:image"
-			content="https://fec-nagoya-org.github.io/icon-gen/assets/ogp.png"
+			content="フロントエンドカンファレンスの公式アイコンジェネレーター。SNSアイコンに枠をつけよう！"
 		>
 		<link rel="icon" href="./favicon.ico" sizes="any">
 		<link
@@ -102,100 +89,24 @@
 				ICON GENERATOR
 			</p>
 			<h1 class="mt-1 text-base font-bold text-neutral-700 sm:text-lg">
-				Frontend Conference Nagoya 2026
+				Frontend Conference
 			</h1>
 			<p class="mt-2 text-xs text-neutral-500 sm:text-sm">
-				画像をアップロードして、アイコンに枠をつけよう
+				アイコンに枠をつけるイベントを選んでください
 			</p>
 		</header>
 
-		<main
-			class="mx-auto flex w-full max-w-md flex-col items-center gap-6 px-4 pb-16"
-		>
-			<div
-				class="relative aspect-square w-full overflow-hidden rounded-2xl bg-white shadow-lg ring-1 ring-neutral-200"
-			>
-				<label
-					id="drop-area"
-					for="file-input"
-					class="absolute inset-0 z-10 flex cursor-pointer items-center justify-center border-2 border-dashed border-neutral-300 transition-colors hover:border-accent hover:bg-accent/5"
-				>
-					<div class="text-center">
-						<p class="text-base font-bold text-neutral-700">
-							タップ／クリックで画像を選択
-						</p>
-						<p class="mt-1 text-xs text-neutral-500">
-							またはここにドラッグ＆ドロップ
-						</p>
-					</div>
-				</label>
-				<canvas
-					id="preview"
-					class="block h-full w-full touch-none"
-					width="400"
-					height="400"
-					aria-label="アイコンプレビュー"
-				></canvas>
-				<input id="file-input" type="file" accept="image/*" class="sr-only">
-			</div>
-
-			<div id="controls" class="flex w-full flex-col gap-4" hidden>
-				<div class="flex flex-col gap-2">
-					<label for="scale" class="text-xs font-bold text-neutral-600">
-						拡大率
-					</label>
-					<input
-						id="scale"
-						type="range"
-						min="0.1"
-						max="3"
-						step="0.01"
-						value="1"
-						class="accent-accent"
+		<main class="mx-auto w-full max-w-md px-4 pb-16">
+			<ul class="flex flex-col gap-3">
+				<li>
+					<a
+						href="./nagoya/2026/"
+						class="flex w-full items-center justify-center rounded-lg border border-neutral-200 bg-white px-4 py-4 text-base font-bold text-neutral-700 shadow-sm transition-colors hover:border-accent hover:text-accent"
 					>
-				</div>
-
-				<div class="flex flex-wrap gap-2">
-					<button
-						id="reset-button"
-						type="button"
-						class="flex-1 rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm font-bold text-neutral-700 transition-colors hover:bg-neutral-100"
-					>
-						位置とサイズをリセット
-					</button>
-					<button
-						id="reselect-button"
-						type="button"
-						class="flex-1 rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm font-bold text-neutral-700 transition-colors hover:bg-neutral-100"
-					>
-						画像を選び直す
-					</button>
-				</div>
-
-				<a
-					id="download"
-					class="flex w-full items-center justify-center rounded-lg bg-accent px-4 py-4 text-base font-bold text-white shadow-sm transition-colors hover:bg-accent-dark"
-					download="fec-nagoya-icon.png"
-				>
-					ダウンロード
-				</a>
-				<p class="text-center text-xs text-neutral-500">
-					クリック（PC）または長押し（スマホ）で画像を保存
-				</p>
-			</div>
-
-			<a
-				href="https://fec-nagoya-org.github.io/2026/"
-				class="text-xs text-neutral-500 underline-offset-4 hover:text-accent hover:underline"
-			>
-				公式サイトへ戻る
-			</a>
+						Frontend Conference Nagoya 2026
+					</a>
+				</li>
+			</ul>
 		</main>
-
-		<footer class="px-4 py-6 text-center">
-			<p class="text-xs text-neutral-400">© Frontend Conference Nagoya 2026</p>
-		</footer>
-
-		<script src="app.js" defer></script>
 	</body>
 </html>
